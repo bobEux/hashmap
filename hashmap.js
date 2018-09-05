@@ -85,8 +85,10 @@
 			var hash = this.hash(key);
 			if ( hash in this._data ) {
 				this.size--;
+				this._data[hash] = null;
 				delete this._data[hash];
 			}
+			hash = null;
 		},
 
 		type:function(key) {
